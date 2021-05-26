@@ -11,3 +11,116 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dark-mode {
+  background-color: black;
+}
+
+.dark-mode h1 {
+  color: white;
+}
+
+.container {
+  /* to constraint the elements inside container to this width */
+  max-width: 960px;
+  /* help keep things centered in large screens */
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  /* takes 100% of view height */
+  min-height: 100vh;
+}
+
+.notes-list {
+  /* this to say notes-list is a css grid container */
+  display: grid;
+  /* defines gap between elements */
+  gap: 1rem;
+  /* how many columns we want to have */
+  /* grid-template-columns: repeat(4, 250px); */
+  /* to make it responsive instead of hardcoded values we use */
+  /* minmax specifies minimum oif 250px and max of 1 fractional unit */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.note {
+  background-color: #6493eb;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 170px;
+  /* this to say note is a flexBox container */
+  display: flex;
+  /* stack elements vertically */
+  flex-direction: column;
+  /* evenly space the items(First item at top of container last item at end of container) */
+  justify-content: space-between;
+  /* keep any spacing that was added to the text */
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.note.new {
+  background-color: #67d7cc;
+}
+
+textarea {
+  border: none;
+  resize: none;
+  background-color: #67d7cc;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.save {
+  background-color: #e1e1e1;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+}
+
+.save:hover {
+  background-color: #eb632d;
+  cursor: pointer;
+}
+
+.save:focus {
+  outline: none;
+}
+
+.note-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete-icon:hover {
+  color: rgb(192, 7, 7);
+  cursor: pointer;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: rgb(233, 233, 233);
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 1.5em;
+}
+
+.search input {
+  border: none;
+  background-color: rgb(233, 233, 233);
+}
+
+.search input:focus {
+  outline: none;
+}
